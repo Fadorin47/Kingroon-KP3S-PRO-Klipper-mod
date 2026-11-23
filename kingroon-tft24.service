@@ -1,0 +1,13 @@
+[Unit]
+Description=Kingroon native TFT24 compact control panel
+ConditionPathExists=%h/kingroon-tft24-dev/touch-cal.json
+
+[Service]
+Type=simple
+WorkingDirectory=%h/kingroon-tft24-dev
+ExecStart=/usr/bin/python3 %h/kingroon-tft24-dev/panel.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
